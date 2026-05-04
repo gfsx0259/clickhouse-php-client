@@ -589,6 +589,8 @@ class Client
             CURLOPT_CONNECTTIMEOUT => $this->config->connectTimeout,
             CURLOPT_HTTPHEADER => $headers,
             CURLOPT_ENCODING => '',
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false,
             CURLOPT_HEADERFUNCTION => function ($curl, $header) use (&$responseHeaders): int {
                 $parts = explode(':', $header, 2);
 
